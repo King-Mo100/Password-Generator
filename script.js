@@ -92,6 +92,11 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() { 
   var passwordLength = prompt ("Choose a password length between 10 - 64 characters");
+
+  if (isNaN (passwordLength)) || passwordLength < 10 || passwordLength > 64 {
+    alert("Please enter a number between 10-64");
+    return;
+  }
   var promptSpecial = prompt ("Would you like special characters? ($@%&*, etc)");
   var promptNumeric = prompt ("Would you like to include numbers?")
   var promptLowercase = prompt ("Would you like lowercase?")
