@@ -98,6 +98,7 @@ function getPasswordOptions() {
     return;
   }
   var promptSpecial = prompt ("Would you like special characters? ($@%&*, etc)");
+  
   var promptNumeric = prompt ("Would you like to include numbers?")
   var promptLowercase = prompt ("Would you like lowercase?")
   var promptUppercase = prompt ("would you like uppercase?")
@@ -105,7 +106,10 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
+
 function getRandom(arr) {
+  var randomEl = Math.floor(Math.random () * arr.length);
+  return arr[randomEl];
 
 }
 
