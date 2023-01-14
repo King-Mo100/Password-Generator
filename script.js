@@ -92,10 +92,16 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
+//this function would return the password length as well as choices of charracters
+// the user will be asked to enter a number betweet 10-64 if the user fails to do so they will be prompted again and so on
+// the user will also be given options of what they would like to include in their passwords.
+//the choiceArr would hold the choices of characters that the password would be generated from.
+// the user would need to confirm atleast one of these options otherwhise it would be undefined
+//if the user confirms any of the choices then that would be added to the choiceArr
+
 function getPasswordOptions() { 
   var passwordLength = parseInt(prompt ("Choose a password length between 10 - 64 characters"));
 
-  //if these are false then the user would be alerted to enter a number between 10 - 64
   while (isNaN (passwordLength) || passwordLength < 10 || passwordLength > 64) {
     alert("Please enter a number between 10-64");
      passwordLength = parseInt(prompt ("Choose a password length between 10 - 64 characters"));
@@ -124,12 +130,18 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
+// this function would then generate a random number between 0 and 1
+// the number would then be multiplied by the length of the array
+// the math.floor would then round the number down to the nearest whole number
 
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Function to generate password with user input
+// based on the user prompts choices of characters and length would determin the length and options to choose from
+//
+
 function generatePassword() {
   var passwordOptions = getPasswordOptions();
   var passwordLength = passwordOptions.passwordLength;
