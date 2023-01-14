@@ -1,4 +1,5 @@
-//g
+//
+  
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
@@ -99,10 +100,19 @@ function getPasswordOptions() {
     alert("Please enter a number between 10-64");
     return;
   }
-  
-  if (confirm("Would you like special characters? ($@%&*, etc)"));
 
-  var promptNumeric = prompt ("Would you like to include numbers?")
+  //options of password characters to choose from
+  var choiceArr = []
+
+//if user confirms, special characters would be added to the choiceArr
+
+  if (confirm("Would you like special characters? ($@%&*, etc)"));{
+    choiceArr = choiceArr.concat(specialCharacters);
+  }
+
+  if (confirm("Would you like to include numbers?")){
+    choiceArr = choiceArr.concat(numericCharacters);
+  }
   var promptLowercase = prompt ("Would you like lowercase?")
   var promptUppercase = prompt ("would you like uppercase?")
 
