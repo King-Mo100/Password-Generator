@@ -140,13 +140,19 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 // based on the user prompts choices of characters and length would determin the length and options to choose from
-//
+// variables are also assinged after values are retrieved as well as properties e.g. the value of the password length and property within the options 
+// the var password is left empty as this would later be used to generate the password
 
 function generatePassword() {
   var passwordOptions = getPasswordOptions();
   var passwordLength = passwordOptions.passwordLength;
   var choiceArr = passwordOptions.choiceArr;
   var password = '';
+
+// A for loop is used it starts at 0 and increases by 1 as long as i is less than passwordlength
+//the get random function is called and would return random choices of charaters within the choiceArr
+//this is then concatenated to the password
+// the password is then returned
 
   for (var i = 0; i < passwordLength; i++){
     password += getRandom(choiceArr);
